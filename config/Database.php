@@ -6,6 +6,13 @@
         private $username = 'root';
         private $password = '';
         private $conn;
+
+        //Database Connect
+        public function connect(){
+            $this->conn = null;
+
+            
+        }
     }
 
 ?>
