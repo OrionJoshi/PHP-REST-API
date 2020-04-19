@@ -45,9 +45,13 @@
 
         //Turn to JSON & output
         echo json_encode($post_arr);
-        
-    }else{
 
+    }else{
+        //No Posts
+        echo json_encode(
+            array('message' => 'No Post Found!')
+
+        );
     }
 
 ?>
