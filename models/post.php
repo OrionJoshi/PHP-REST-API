@@ -28,7 +28,7 @@
                     p.category_id,
                     p.title,
                     p.body,
-                    p.author
+                    p.author,
                     p.created_at
                 FROM
                 '. $this->table .' p
