@@ -71,6 +71,9 @@
             //Bind ID
             $stmt->bindParam(1, $this->id);
 
+            //Execute Query
+            $stmt->execute();
+
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Set Properties
