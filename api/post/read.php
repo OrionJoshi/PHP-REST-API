@@ -19,4 +19,13 @@
     //Get row count
     $num = $result->rowCount();
 
+    //Check if any posts
+    if($num > 0){
+        //Post array Initaialize
+        $post_arr = array();
+        $post_arr['data'] = array();
+    }else{
+
+    }
+
 ?>
