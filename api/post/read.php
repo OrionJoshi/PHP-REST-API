@@ -24,6 +24,21 @@
         //Post array Initaialize
         $post_arr = array();
         $post_arr['data'] = array();
+
+        //fetching post as associative array
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            extract($row);
+
+            $post_item = array(
+
+                'id' => $id,
+                'title' => $title,
+                'body' => html_entity_decode($body),
+                'author' => $author,
+                'category_id' => $category_id,
+                'category_name' => $category_name
+            );
+        }
     }else{
 
     }
