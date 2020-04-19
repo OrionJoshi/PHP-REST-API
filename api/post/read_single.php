@@ -12,4 +12,7 @@
 
     //Instantiate blog post object
     $post = new Post($db);
+
+    //GET ID
+    $post->id = isset($_GET['id']) ? $_GET['id'] : die();
 ?>
