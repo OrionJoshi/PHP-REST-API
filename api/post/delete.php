@@ -21,4 +21,15 @@
     //SET ID to Delete
     $post->id = $data->id; 
 
+    //Update Post
+    if($post->delete()){
+        echo json_encode(
+            array('message' => 'Post deleted')
+        );
+    }else{
+        echo json_encode(
+            array('message' => 'Post Not deleted')
+        );
+    }
+
 ?>
