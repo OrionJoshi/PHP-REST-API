@@ -15,4 +15,9 @@
 
     //Instantiate blog post object
     $post = new Post($db);
+
+    //GET the raw posted data
+    $data = json_decode(file_get_contents("php://input"));
+
+    
 ?>
