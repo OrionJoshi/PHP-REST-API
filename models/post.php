@@ -94,7 +94,7 @@
                     title = :title,
                     body = :body,
                     author = :author,
-                    category_id = category_id
+                    category_id = :category_id
             ';
             //Prepare Statement
             $stmt = $this->conn->prepare($query);
