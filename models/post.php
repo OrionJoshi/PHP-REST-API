@@ -63,7 +63,7 @@
                 categories c ON p.category_id = c.id
             WHERE
                 p.id = ?
-            LIMIT 0,1';
+            LIMIT 0,1';//Using Positional Parameter as ?
 
             //Prepare Statement
             $stmt = $this->conn->prepare($query);
@@ -118,6 +118,23 @@
             // Print error if Something goes wrong
             printf("Error: %s.\n",$stmt->error);
             return false;
+        }
+
+         //Update Post
+         public function update(){
+            //Create query
+            $query = 'UPDATE INTO ' . 
+                    $this->table . '
+                SET
+                    title = :title,
+                    body = :body,
+                    author = :author,
+                    category_id = :category_id
+                WHERE
+                    id = :id ';//Named Parameter
+            //Prepare Statement
+            $stmt = $this->conn->prepare($query);
+
         }
     }
 
