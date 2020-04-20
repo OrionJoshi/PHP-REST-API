@@ -123,7 +123,7 @@
          //Update Post
          public function update(){
             //Create query
-            $query = 'UPDATE INTO ' . 
+            $query = 'UPDATE ' . 
                     $this->table . '
                 SET
                     title = :title,

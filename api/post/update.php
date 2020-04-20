@@ -26,7 +26,7 @@
     $post->category_id = $data->category_id;
 
      //Update Post
-     if($post->Update()){
+     if($post->update()){
         echo json_encode(
             array('message' => 'Post Updated')
         );
