@@ -63,7 +63,7 @@
                 categories c ON p.category_id = c.id
             WHERE
                 p.id = ?
-            LIMIT 0,1';
+            LIMIT 0,1';//Using Positional Parameter as ?
 
             //Prepare Statement
             $stmt = $this->conn->prepare($query);
@@ -110,6 +110,46 @@
             $stmt->bindParam(':body' , $this->body);
             $stmt->bindParam(':author' , $this->author);
             $stmt->bindParam(':category_id' , $this->category_id);
+
+            //Exeute Query
+            if($stmt->execute()){
+                return true;
+            }
+            // Print error if Something goes wrong
+            printf("Error: %s.\n",$stmt->error);
+            return false;
+        }
+
+         //Update Post
+         public function update(){
+            //Create query
+            $query = 'UPDATE INTO ' . 
+                    $this->table . '
+                SET
+                    title = :title,
+                    body = :body,
+                    author = :author,
+                    category_id = :category_id
+                WHERE
+                    id = :id ';//Named Parameter
+            //Prepare Statement
+            $stmt = $this->conn->prepare($query);
+
+            // Clean Data
+            $this->title = htmlspecialchars(strip_tags($this->title));
+            $this->body = htmlspecialchars(strip_tags($this->body));
+            $this->author = htmlspecialchars(strip_tags($this->author));
+            $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+
+            //Bind Data
+            $stmt->bindParam(':title' , $this->title);
+            $stmt->bindParam(':body' , $this->body);
+            $stmt->bindParam(':author' , $this->author);
+            $stmt->bindParam(':category_id' , $this->category_id);
+            $stmt->bindParam(':id' , $this->id);
+
 
             //Exeute Query
             if($stmt->execute()){
