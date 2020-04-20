@@ -135,6 +135,15 @@
             //Prepare Statement
             $stmt = $this->conn->prepare($query);
 
+            // Clean Data
+            $this->title = htmlspecialchars(strip_tags($this->title));
+            $this->body = htmlspecialchars(strip_tags($this->body));
+            $this->author = htmlspecialchars(strip_tags($this->author));
+            $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+
+           
         }
     }
 
