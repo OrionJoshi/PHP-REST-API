@@ -111,6 +111,12 @@
             $stmt->bindParam(':author' , $this->author);
             $stmt->bindParam(':category_id' , $this->category_id);
 
+            //Exeute Query
+            if($stmt->execute()){
+                return true;
+            }
+
+            return false;
         }
     }
 
