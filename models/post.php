@@ -123,7 +123,7 @@
          //Update Post
          public function update(){
             //Create query
-            $query = 'UPDATE INTO ' . 
+            $query = 'UPDATE ' . 
                     $this->table . '
                 SET
                     title = :title,
@@ -151,6 +151,30 @@
             $stmt->bindParam(':id' , $this->id);
 
 
+            //Exeute Query
+            if($stmt->execute()){
+                return true;
+            }
+            // Print error if Something goes wrong
+            printf("Error: %s.\n",$stmt->error);
+            return false;
+        }
+        
+        //Delete Post
+        public function delete(){
+            //Create Query
+            $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
+
+            //Prepare Statement
+            $stmt = $this->conn->prepare($query);
+
+            //Clean Data
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+            //Bind The ID
+            $stmt->bindParam(':id',$this->id);
+
+            
             //Exeute Query
             if($stmt->execute()){
                 return true;
