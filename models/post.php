@@ -159,6 +159,12 @@
             printf("Error: %s.\n",$stmt->error);
             return false;
         }
+        
+        //Delete Post
+        public function delete(){
+            //Create Query
+            $query = 'DELETE FROM ' .$this->table . 'WHERE id = :id';
+        }
     }
 
 ?>
