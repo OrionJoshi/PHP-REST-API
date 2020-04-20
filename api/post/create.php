@@ -9,5 +9,10 @@
     include_once '../../config/Database.php';
     include_once '../../models/Post.php';
 
-   
+    //Instantiate Database and connect to Database
+    $database = new Database();
+    $db = $database->connect();
+
+    //Instantiate blog post object
+    $post = new Post($db);
 ?>
