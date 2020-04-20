@@ -18,6 +18,11 @@
     $data = json_decode(file_get_contents("php://input"));
 
     //SET ID to updata
+    $post->id = $data->id; 
     
+    $post->title = $data->title;
+    $post->body = $data->body;
+    $post->author = $data->author;
+    $post->category_id = $data->category_id;
 
 ?>
