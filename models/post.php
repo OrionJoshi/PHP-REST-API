@@ -167,6 +167,12 @@
 
             //Prepare Statement
             $stmt = $this->conn->prepare($query);
+
+            //Clean Data
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+            //Bind The ID
+            $stmt->bindParam(':id',$this->id);
         }
     }
 
