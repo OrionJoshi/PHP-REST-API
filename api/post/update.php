@@ -19,10 +19,21 @@
 
     //SET ID to updata
     $post->id = $data->id; 
-    
+
     $post->title = $data->title;
     $post->body = $data->body;
     $post->author = $data->author;
     $post->category_id = $data->category_id;
+
+     //Update Post
+     if($post->Update()){
+        echo json_encode(
+            array('message' => 'Post Updated')
+        );
+    }else{
+        echo json_encode(
+            array('message' => 'Post Not Updated')
+        );
+    }
 
 ?>
