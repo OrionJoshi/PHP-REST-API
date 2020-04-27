@@ -13,6 +13,18 @@
         public function __construct($db){
             $this->conn = $db;
         }
+
+        //GET categories
+        public function read(){
+            // Create Query
+            $query = 'SELECT 
+            id,
+            name
+         FROM
+            ' . $this->table . '
+         ORDER BY
+            created_at DESC';
+        }
     }
 
 ?>
