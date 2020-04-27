@@ -24,7 +24,12 @@
             ' . $this->table . '
          ORDER BY
             created_at DESC';
+
+            //Prepare statment
+            $stmt = $this->conn->prepare($query);
+            
         }
+
     }
 
 ?>
