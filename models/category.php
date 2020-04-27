@@ -27,7 +27,9 @@
 
             //Prepare statment
             $stmt = $this->conn->prepare($query);
-            
+
+            //Execute query
+            $stmt->execute();
         }
 
     }
