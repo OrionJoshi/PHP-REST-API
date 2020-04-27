@@ -4,10 +4,15 @@
         private $conn;
         private $table = 'categories';
 
-        //Properties
+        // Category Properties
         public $id;
         public $name;
         public $created_at;
+
+        // Constructor With DB
+        public function __construct($db){
+            $this->conn = $db;
+        }
     }
 
 ?>
