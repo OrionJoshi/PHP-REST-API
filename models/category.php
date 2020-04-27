@@ -30,6 +30,8 @@
 
             //Execute query
             $stmt->execute();
+
+            return $stmt;
         }
 
     }
