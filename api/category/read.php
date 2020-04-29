@@ -16,4 +16,7 @@
 
     //Category read query
     $result = $category->read();
+
+    //Get row count
+    $num = $result->rowCount();
 ?>
