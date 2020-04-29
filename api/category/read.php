@@ -37,8 +37,13 @@
             // Push to data
             array_push($cat_arr['data'], $cat_item);
 
-            
-        }
-        
+            // Turn to JSON and output
+            echo json_encode($cat_arr);
+        }   
+    }else{
+        //No Categories
+        echo json_encode(
+            array('message' => 'No Categories Found')
+        );
     }
 ?>
