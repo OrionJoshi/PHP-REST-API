@@ -19,7 +19,8 @@
             // Create Query
             $query = 'SELECT 
             id,
-            name
+            name,
+            created_at
          FROM
             ' . $this->table . '
          ORDER BY
