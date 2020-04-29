@@ -19,4 +19,21 @@
 
     //Get row count
     $num = $result->rowCount();
+
+    //Check if any categories
+    if($num > 0){
+        //Category array
+        $cat_arr = array();
+        $cat_arr['data'] = array();
+
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            extract($row);
+
+            $cat_item = array(
+                'id' => $id,
+                'name' => $name
+            );
+        }
+        
+    }
 ?>
