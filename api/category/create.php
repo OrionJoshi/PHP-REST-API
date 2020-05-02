@@ -12,4 +12,10 @@
     //Instantiate Database and connect to Database
     $database = new Database();
     $db = $database->connect();
+
+    //Instantiate blog category object
+    $category = new Category($db);
+
+    //GET the raw category data
+    $data = json_decode(file_get_contents("php://input"));
 ?>
