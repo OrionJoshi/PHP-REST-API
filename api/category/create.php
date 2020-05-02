@@ -12,4 +12,7 @@
     //Instantiate Database and connect to Database
     $database = new Database();
     $db = $database->connect();
+
+    //Instantiate blog category object
+    $category = new Category($db);
 ?>
