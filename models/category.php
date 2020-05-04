@@ -91,6 +91,8 @@
                     name = :name
                 WHERE
                     id = :id ';//Named Parameter
+        //Prepare Statment
+        $stmt = $this->conn->prepare($query);
         }
 
     }
