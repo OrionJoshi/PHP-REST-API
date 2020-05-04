@@ -70,7 +70,9 @@
 
             //Clean Data
             $this->id = htmlspecialchars(strip_tags($this->id));
-            
+
+            //Bind the ID
+            $stmt->bindParam(':id',$this->id);
         }
 
     }
