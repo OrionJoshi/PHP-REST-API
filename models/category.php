@@ -64,6 +64,9 @@
         public function delete(){
             //Create query
             $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
+
+            //Prepare the statement
+            $stmt = $this->conn->prepare($query);
             
         }
 
