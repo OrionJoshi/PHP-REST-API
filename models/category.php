@@ -93,6 +93,12 @@
                     id = :id ';//Named Parameter
         //Prepare Statment
         $stmt = $this->conn->prepare($query);
+
+        //Clean Data
+        $this->name = htmlspecialchars(strip_tags($this->name));
+
+        //Bind Data
+        $stmt->bindParam(':name' , $this->name);
         }
 
     }
