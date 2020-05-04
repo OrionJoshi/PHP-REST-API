@@ -99,8 +99,16 @@
 
         //Bind Data
         $stmt->bindParam(':name' , $this->name);
-        }
 
+        //Execute Query
+        if($stmt->execute()){
+            return true;
+        }
+        // Print error if Something goes Wrong
+        printf("Error: %s. \n",$stmt->error);
+        return false;
     }
+
+}
 
 ?>
