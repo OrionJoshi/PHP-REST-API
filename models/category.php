@@ -91,24 +91,23 @@
                     name = :name
                 WHERE
                     id = :id ';//Named Parameter
-        //Prepare Statment
-        $stmt = $this->conn->prepare($query);
+            //Prepare Statment
+            $stmt = $this->conn->prepare($query);
 
-        //Clean Data
-        $this->name = htmlspecialchars(strip_tags($this->name));
+            //Clean Data
+            $this->name = htmlspecialchars(strip_tags($this->name));
 
-        //Bind Data
-        $stmt->bindParam(':name' , $this->name);
+            //Bind Data
+            $stmt->bindParam(':name' , $this->name);
 
-        //Execute Query
-        if($stmt->execute()){
-            return true;
+            //Execute Query
+            if($stmt->execute()){
+             return true;
+            }
+            // Print error if Something goes Wrong
+            printf("Error: %s. \n",$stmt->error);
+            return false;
         }
-        // Print error if Something goes Wrong
-        printf("Error: %s. \n",$stmt->error);
-        return false;
     }
-
-}
 
 ?>
