@@ -82,6 +82,16 @@
             printf("Error: %s. \n",$stmt->error);
             return false;
         }
+        //Update Category
+        public function update(){
+            //Create query
+            $query = 'UPDATE ' .
+                    $this->table . '
+                SET
+                    name = :name
+                WHERE
+                    id = :id ';//Named Parameter
+        }
 
     }
 
