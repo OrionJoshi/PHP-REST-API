@@ -60,6 +60,12 @@
             printf("Error: %s. \n",$stmt->error);
             return false;
         }
+        //Delete Post
+        public function delete(){
+            //Create query
+            $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
+            
+        }
 
     }
 
