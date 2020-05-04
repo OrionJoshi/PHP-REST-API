@@ -67,6 +67,9 @@
 
             //Prepare the statement
             $stmt = $this->conn->prepare($query);
+
+            //Clean Data
+            $this->id = htmlspecialchars(strip_tags($this->id));
             
         }
 
