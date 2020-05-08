@@ -14,4 +14,8 @@
 
     //Instantiate Category post object
     $post = new Category($db);
+
+    //Get The raw posted data
+    $data = json_decode(file_get_contents("php://input"));
+    
 ?>
