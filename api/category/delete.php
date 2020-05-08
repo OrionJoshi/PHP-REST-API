@@ -17,5 +17,7 @@
 
     //Get The raw posted data
     $data = json_decode(file_get_contents("php://input"));
-    
+
+    //Set ID to Delete
+    $post->id = $data->id;
 ?>
