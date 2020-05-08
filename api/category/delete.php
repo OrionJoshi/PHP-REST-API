@@ -7,4 +7,15 @@
 
     include_once '../../config/Database.php';
     include_once '../../models/category.php';
+
+    //Instantiate Databse and connect to Database
+    $database = new Database();
+    $db = $database->connect();
+
+    //Instantiate Category post object
+    $post = new Category($db);
+
+    //Get The raw posted data
+    $data = json_decode(file_get_contents("php://input"));
+    
 ?>
