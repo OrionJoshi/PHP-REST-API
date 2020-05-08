@@ -12,5 +12,6 @@
     $database = new Database();
     $db = $database->connect();
 
-    
+    //Instantiate Category post object
+    $post = new Category($db);
 ?>
