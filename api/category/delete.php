@@ -7,4 +7,10 @@
 
     include_once '../../config/Database.php';
     include_once '../../models/category.php';
+
+    //Instantiate Databse and connect to Database
+    $database = new Database();
+    $db = $database->connect();
+
+    
 ?>
