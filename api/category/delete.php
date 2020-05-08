@@ -20,4 +20,15 @@
 
     //Set ID to Delete
     $post->id = $data->id;
+
+    //Delete Post
+    if($post->delete()){
+        echo json_encode(
+            array('message' => 'Category Deleted')
+        );
+    }else{
+        echo json_encode(
+            array('message' => 'Category Not Deleted')
+        );
+    }
 ?>
