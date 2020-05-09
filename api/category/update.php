@@ -13,4 +13,13 @@
     $database = new Database();
     $db = $database->connect();
     
+    //Instantiate Category object
+    $category = new Category($db);
+
+    //Getting the raw data from request body
+    $data = json_decode(file_get_contents("php://input"));
+
+    //Set id and name to update
+    $category->id = $data->id;
+    $category->name = $data->name;
     ?>
